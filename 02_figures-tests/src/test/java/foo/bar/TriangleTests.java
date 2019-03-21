@@ -10,7 +10,6 @@ public class TriangleTests {
     @CsvSource({
             "5, 4, 10 ",
             "6, 2, 6",
-            "5, 5, 12.5"
     })
     void areaOfTriangle(int a, int b, double expectedArea) {
         Triangle triangle = new Triangle(a, b);

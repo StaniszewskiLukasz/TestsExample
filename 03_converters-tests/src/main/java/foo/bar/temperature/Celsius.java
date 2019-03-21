@@ -6,27 +6,16 @@ import java.math.BigDecimal;
 
 public class Celsius implements TemperatureUnit {
 
-  /*  public static final BigDecimal CELSIUS_TO_FAHRENHEIT =
+    private BigDecimal value;
+
+    public static final BigDecimal CELSIUS_TO_FAHRENHEIT =
             new BigDecimal("32").setScale(SCALE, ROUNDING_MODE);
 
-//    public static final BigDecimal CELSIUS_TO_FAHRENHEIT_MULTIPLY =
-//            new BigDecimal("1.8").setScale(SCALE, ROUNDING_MODE);
-
-    private final BigDecimal value;
-
     public Celsius(BigDecimal value) {
-        if (BigDecimal.ZERO.compareTo(value) < 100 && BigDecimal.ZERO.compareTo(value) > -273.15) {
-            throw new IllegalArgumentException("Length can't be negative!");
+        if (BigDecimal.ZERO.compareTo(value) > 100 && BigDecimal.ZERO.compareTo(value) < -273.15) {
+            throw new IllegalArgumentException("Temperature can't be under 100 or below -273,15!");
         }
         this.value = value.setScale(SCALE, ROUNDING_MODE);
-    }
-
-
-    public Celsius(BigDecimal setScale) {
-
-    }
-
-    public Celsius(BigDecimal setScale) {
     }
 
     public BigDecimal getValue() {
@@ -34,6 +23,6 @@ public class Celsius implements TemperatureUnit {
     }
 
     public Fahrenheit toFahrenheit() {
-        return new Centimeter(value.multiply(CELSIUS_TO_FAHRENHEIT_MULTIPLY).add(CELSIUS_TO_FAHRENHEIT).setScale(SCALE, ROUNDING_MODE));
-    }*/
+        return new Fahrenheit(value.multiply(BigDecimal.valueOf(1.8)).add(CELSIUS_TO_FAHRENHEIT).setScale(SCALE, ROUNDING_MODE));
+    }
 }

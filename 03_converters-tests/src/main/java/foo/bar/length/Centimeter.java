@@ -18,6 +18,7 @@ public class Centimeter implements LengthUnit{
     }
 
     public Inch toInches() {
+
         return new Inch(value.divide(Inch.INCH_TO_CENTIMETER, SCALE, ROUNDING_MODE));
     }
 }
