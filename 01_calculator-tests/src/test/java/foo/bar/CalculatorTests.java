@@ -53,12 +53,10 @@ class CalculatorTests {
     }
 
     @Test
-    @DisplayName("5 / 0 = error")
+    @DisplayName("5 / 0 = Exception")
     void divideTwoNumbersWithZero(){
             Calculator calculator = new Calculator();
             IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class, ()-> calculator.divide(5, 0), "5 / 0 should equal error");
-
-
     }
 
 

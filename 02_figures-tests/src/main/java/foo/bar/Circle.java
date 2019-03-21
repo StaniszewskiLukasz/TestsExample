@@ -1,17 +1,20 @@
 package foo.bar;
 
-public class Circle{
+public class Circle {
 
-    private final double a = 3.14;
+    private final double pi = 3.14;
+    private int r;
 
+    public Circle(int r) {
+        this.r = r;
+    }
 
-
-    public double area(){
-        return 0;
+    public double area(int radius) {
+        return pi * radius * radius;
     }
 
 
-    public int circumference() {
-        return 2;
+    public double circumference(int radius) {
+        return pi * radius * 2;
     }
 }

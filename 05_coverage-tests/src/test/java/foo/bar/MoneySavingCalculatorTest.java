@@ -21,4 +21,24 @@ public class MoneySavingCalculatorTest {
                         BigDecimal.valueOf(1000), Period.ofYears(1))
         );
     }
+
+    @Test
+    @Description("If I am saving 1.23 PLN each day for next 138 days, I should save `169.74 PLN`")
+    void saveEachDayDuring138Days() {
+        Assertions.assertEquals(
+                BigDecimal.valueOf(1.23),
+                calc.calculateSavings(SavingFrequency.EACH_DAY,
+                        BigDecimal.valueOf(1.23), Period.ofYears(1))
+        );
+    }
+
+    @Test
+    @Description("If I am saving 1.23 PLN each day for next 138 days, I should save `169.74 PLN`")
+    void save() {
+        Assertions.assertEquals(
+                BigDecimal.valueOf(1.23),
+                calc.calculateSavings(SavingFrequency.EACH_DAY,
+                        BigDecimal.valueOf(1.23), Period.ofYears(1))
+        );
+    }
 }
